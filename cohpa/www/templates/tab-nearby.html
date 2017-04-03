@@ -1,0 +1,17 @@
+<ion-view view-title="Nearby">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="art in nearbyArt | orderBy: ['distance', 'title'] track by art._id" ng-hide="art.inHistory" href="#/tab/detail/{{art._id}}">
+        <h2>{{ art.title || 'Unknown Title' }}</h2>
+        <p>{{ art.artist || 'Unknown Artist' }}</p>
+        <small>{{ art.distance | number:2 }} miles away</small>
+        <span class="item-note">{{ art.likes || 0 }} likes</span>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item>
+        <h2 class="text-right">Total: {{ listLength }}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

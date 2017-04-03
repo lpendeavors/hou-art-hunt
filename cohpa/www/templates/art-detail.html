@@ -1,0 +1,26 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Public Art">
+  <ion-content class="padding">
+    <h3 class="text-center">{{ art.title || 'Unknown Title' }}</h3>
+    <h4 class="text-center"> {{ art.artist || 'Unknown Artist' }}</h4>
+    <div class="map-container" data-tap-disabled="true">
+      <leaflet id="detailMap" lf-center="mapCenter" markers="markers" tiles="tiles"></leaflet>
+    </div>
+    <br>
+    <div class="text-center">
+      <p><b>{{ art.address }}</b></p>
+      <p>{{ art.specificLocation }}</p>
+      <p><i>{{ art.mediaAndSupport }}</i></p>
+      <p><i>{{ art.creditLine }}</i></p>
+      <p><i>{{ art.creationDate }}</i></p>
+      <button class="button button-positive" ng-hide="inHistory" ng-click="saveToHistory(art)">
+        Add to History
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

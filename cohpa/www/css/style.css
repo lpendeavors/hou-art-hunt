@@ -1,0 +1,22 @@
+/* Empty. Add your own CSS if you like */
+em,i {
+    font-style:italic;
+}
+b {
+    font-weight: bold;
+}
+
+#detailMap {
+    height: 180px;
+}
+
+#exploreMap {
+    height: 100vh;
+}
+
+
+
+
+.platform-android .bar .title {
+    text-align: center;
+}
